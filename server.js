@@ -12,12 +12,9 @@ const app = express();
 
 // ✅ CORS fix — Netlify URL allow karo
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://edu-school1.netlify.app",
-    "*"
-  ],
-  credentials: true,
+  origin: "*",
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
+  allowedHeaders: ["Content-Type","Authorization"],
 }));
 
 app.use(express.json());
